@@ -10,8 +10,8 @@ export default defineComponent({
   name: "Index",
   setup() {
     const init = () => {
-      const width = 960;
-      const height = 540;
+      const width = window.innerWidth;
+      const height = window.innerHeight;
 
       // レンダラーを作成
       const renderer = new THREE.WebGLRenderer({
@@ -25,7 +25,7 @@ export default defineComponent({
 
       // カメラを作成
       const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
-      camera.position.set(0, 0, +1000);
+      camera.position.set(0, 0, +1500);
 
       // 箱を作成
       const geometry = new THREE.BoxGeometry(500, 500, 500);
@@ -41,8 +41,18 @@ export default defineComponent({
       // シーンに追加
       scene.add(directionalLight);
 
-      // 初回実行
-      renderer.render(scene, camera);
+      tick();
+
+      function tick() {
+        requestAnimationFrame(tick);
+
+        // 箱を回転させる
+        box.rotation.x += 0.01;
+        box.rotation.y += 0.01;
+
+        // レンダリング
+        renderer.render(scene, camera);
+      }
     };
 
     onMounted(() => {
