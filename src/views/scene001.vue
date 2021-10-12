@@ -7,6 +7,7 @@
 import { defineComponent, onMounted } from "vue";
 import * as THREE from "three";
 import ToIndexLink from "../components/ToIndexLink.vue";
+import { getRenderer } from "../modules";
 
 export default defineComponent({
   name: "Scene001",
@@ -15,15 +16,8 @@ export default defineComponent({
   },
   setup() {
     const init = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-
       // レンダラーを作成
-      const renderer = new THREE.WebGLRenderer({
-        canvas: document.querySelector("#myCanvas") || undefined,
-      });
-      renderer.setPixelRatio(window.devicePixelRatio);
-      renderer.setSize(width, height);
+      const { width, height, renderer } = getRenderer();
 
       // シーンを作成
       const scene = new THREE.Scene();
