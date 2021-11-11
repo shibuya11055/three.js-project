@@ -11,6 +11,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "Scene001",
     component: () => import("../views/scene001.vue"),
   },
+  {
+    path: "/002",
+    name: "Scene002",
+    component: () => import("../views/scene002.vue"),
+  },
 ];
 
 const router = createRouter({
@@ -18,8 +23,10 @@ const router = createRouter({
   routes,
 });
 
-export const routerPages = routes.map((route) => {
-  if (route.name !== 'Index') return route.path
-}).filter((page): page is string => typeof (page) === 'string')
+export const routerPages = routes
+  .map((route) => {
+    if (route.name !== "Index") return route.path;
+  })
+  .filter((page): page is string => typeof page === "string");
 
 export default router;
