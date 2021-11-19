@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
-import ToIndexLink from "../components/ToIndexLink.vue";
+import ToIndexLink from "../../components/ToIndexLink.vue";
 import p5 from "p5";
 
 let stepX = 0;

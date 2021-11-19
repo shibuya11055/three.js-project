@@ -6,8 +6,8 @@
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
 import * as THREE from "three";
-import ToIndexLink from "../components/ToIndexLink.vue";
-import { getRenderer } from "../modules";
+import ToIndexLink from "../../components/ToIndexLink.vue";
+import { getRenderer } from "../../modules";
 
 export default defineComponent({
   name: "Scene001",

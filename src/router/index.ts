@@ -9,17 +9,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/001",
     name: "Scene001",
-    component: () => import("../views/scene001.vue"),
+    component: () => import("../views/scenes/scene001.vue"),
   },
   {
     path: "/002",
     name: "Scene002",
-    component: () => import("../views/scene002.vue"),
+    component: () => import("../views/scenes/scene002.vue"),
   },
   {
     path: "/003",
     name: "Scene003",
-    component: () => import("../views/scene003.vue"),
+    component: () => import("../views/scenes/scene003.vue"),
   },
 ];
 
