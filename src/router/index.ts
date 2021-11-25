@@ -21,6 +21,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "Scene003",
     component: () => import("../views/scenes/scene003.vue"),
   },
+  {
+    path: "/004",
+    name: "Scene004",
+    component: () => import("../views/scenes/scene004.vue"),
+  },
 ];
 
 const router = createRouter({
