@@ -7,9 +7,6 @@ import { defineComponent, ref } from "vue";
 import ToIndexLink from "../../components/ToIndexLink.vue";
 import p5 from "p5";
 
-let stepX = 0;
-let stepY = 0;
-
 export default defineComponent({
   name: "Scene003",
   components: {
@@ -33,8 +30,6 @@ export default defineComponent({
 
         p.beginShape(p.TRIANGLE_FAN);
         p.vertex(p.width / 2, p.height / 2);
-
-        let isEven = p.random(1, 2) % 2 === 0;
 
         let radius = p.random(p.frameCount / 2, p.frameCount / 50);
         let radius2 = p.random(p.frameCount / 2, p.frameCount / 50);
